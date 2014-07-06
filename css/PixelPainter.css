@@ -17,6 +17,12 @@ table, tr, td {
   border: 1px solid black;
 }
 
+tr.pallette > td {}
+
+.pallette {
+  text-align: center;
+}
+
 #erase {
   margin-left: 94px;
   margin-top: 30px;
@@ -49,7 +55,7 @@ table, tr, td {
   height: 437px;
 }
 
-#grid {
+.grid {
   height: 500px;
 }
 
