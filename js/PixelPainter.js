@@ -40,23 +40,25 @@ $(document).ready(function() {
 
 
 
-  //code to generate grid
-  var gridTable = $('<table></table>');//create variable table container for grid
-
-  for (var k = 0; k <= 8; k++) {//gridRow will be 8 rows
-    var gridRow = $('<tr/>'); //container to hold rows
-    for (var l = 0; l <= 6; k++) {//gridRow will have 6 data cells (td)
-      $(gridRow).append('<td></td>');//append td's to row
-    };
-  $(table).append(gridRow);//appends rows to table 
-  };
-  $('#artboard').append(table);
+  
 
 
 });
 
+$(document).ready(function() {
+//code to generate grid
+  var gridTable = $('<table></table>');//create variable table container for grid
 
+  for (var k = 0; k <= 8; k++) {//gridRow will be 8 rows
+    var gridRow = $('<tr/>'); //container to hold rows
+    for (var l = 0; l <= 6; l++) {//gridRow will have 6 data cells (td)
+      $(gridRow).append('<td></td>');//append td's to row
+    };
+  $(gridTable).append(gridRow);//appends rows to table 
+  };
+  $('#artboard').append(gridTable);
 
+});
 
 //  below is code that does not include js for generating pallette and grids.
 
