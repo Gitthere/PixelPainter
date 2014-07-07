@@ -1,3 +1,65 @@
+
+$(document).ready(function() {
+  //generates color pallette
+  var table = $('<table></table>');//create variable table container
+
+  for (var i = 0; i <= 6; i++) {//tableRow will be 6 rows
+    var tableRow = $('<tr/>');//create tableRow container
+    for (var j = 0; j <= 6; j++)  {//tableRow will contain 6 td data cells
+      $(tableRow).append('<td></td>');//data cells will be appended to tableRow
+    };
+  $(table).append(tableRow);//then tableRows appended to table
+  };
+
+  $('#controls').append(table);//table then appended to id 'controls' in html
+
+
+
+  //array of colors for pallette
+  var colors = ['#FF0000', '#CC0000', '#A30000', '#820000', '#680000', '#530000', '#FF6600', '#E65C00', '#B84A00', '#933B00', '#762F00', '#4B1E00', '#FFFF00', '#E6E600', '#B8B800', '#939300', '#767600', '#5E5E00', '#00FF00', '#00E600', '#00CF00', '#00A600', '#008500', '#006A00', '#0099FF', '#008AE6', '#007CCF', '#0070BA', '#005B96', '#005B96', '#CC33FF', '#B82EE6', '#A629CF', '#9525BA', '#8621A7', '#791E96'];
+
+
+
+
+  //erase button
+  var erase = $('<button>erase</button>').click(function() {//creates erase button
+
+  });
+  $('#controls').append(erase);//appends button to id 'controls'
+
+
+
+
+
+  //clear button
+  var clear = $('<button>clear</button>').click(function() {//creates clear button
+
+  });
+  $('#controls').append(clear);//appends button to id 'controls'
+
+
+
+
+  //code to generate grid
+  var gridTable = $('<table></table>');//create variable table container for grid
+
+  for (var k = 0; k <= 8; k++) {//gridRow will be 8 rows
+    var gridRow = $('<tr/>'); //container to hold rows
+    for (var l = 0; l <= 6; k++) {//gridRow will have 6 data cells (td)
+      $(gridRow).append('<td></td>');//append td's to row
+    };
+  $(table).append(gridRow);//appends rows to table 
+  };
+  $('#artboard').append(table);
+
+
+});
+
+
+
+
+//  below is code that does not include js for generating pallette and grids.
+
 // $(document).ready(function() {//Specify a function to execute when the DOM is fully loaded.
 //   var holdColor;
 //   var td = $('tr.pallette > td');//gets direct descendent (td) of tr to get color. if use just .pallette, color would not register
@@ -12,22 +74,3 @@
 //   });
 
 // });
-
-
-
-$(document).ready(function() {
-
-  var pallette = "";
-  var table = $('<table></table>');
-
-  for (var i = 0; i <= 6; i++) {
-    //$('#controls').append('<tr></tr>');
-    var tableRow = $('<tr/>');
-    for (var j = 0; j <= 6; j++)  {
-      $(tableRow).append('<td></td>');
-    }
-  //$('#controls').append(tableRow);
-  $(table).append(tableRow);
-  }
-  $('#controls').append(table);
-});
