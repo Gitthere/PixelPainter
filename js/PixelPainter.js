@@ -3,6 +3,7 @@ $(document).ready(function() {
   //generates color pallette
   var table = $('<table></table>');//create variable table container
   var colors = ['#FF0000', '#CC0000', '#A30000', '#820000', '#680000', '#530000', '#FF6600', '#E65C00', '#B84A00', '#933B00', '#762F00', '#4B1E00', '#FFFF00', '#E6E600', '#B8B800', '#939300', '#767600', '#5E5E00', '#00FF00', '#00E600', '#00CF00', '#00A600', '#008500', '#006A00', '#0099FF', '#008AE6', '#007CCF', '#0070BA', '#005B96', '#005B96', '#CC33FF', '#B82EE6', '#A629CF', '#9525BA', '#8621A7', '#791E96'];
+  var eraserOn = false;
   
   var m = 0;
   for (var i = 0; i < 6; i++) {//tableRow will be 6 rows
@@ -10,31 +11,12 @@ $(document).ready(function() {
     for (var j = 0; j < 6; j++)  {//tableRow will contain 6 td data cells
       var tableData = $('<td></td>');
       $(tableRow).append(tableData);//data cells will be appended to tableRow
-      tableData.css({'background-color': colors[m]});
+      tableData.css({'background-color': colors[m]});//color at index[m] assigned to data cell
       m++;
     };
   $(table).append(tableRow);//then tableRows appended to table
   };
   $('#controls').append(table);//table then appended to id 'controls' in html
-
-
-
-
-  //erase button
-  var erase = $('<button id="erase">erase</button>').click(function() {//creates erase button
-
-  });
-  $('#controls').append(erase);//appends button to id 'controls'
-
-
-
-
-
-  //clear button
-  var clear = $('<button id="clear">clear</button>').click(function() {//creates clear button
-
-  });
-  $('#controls').append(clear);//appends button to id 'controls'
 
 
 //code to generate grid
@@ -49,21 +31,48 @@ $(document).ready(function() {
   };
   $('#artboard').append(gridTable);
 
-  
 
-
-  var holdColor;
-  $('#controls td').on("click", function() {
+  var holdColor;//to choose color from pallette
+  $('#controls td').on("click", function() {//targets td in #controls
     holdColor = $(this).css("background-color");//transfers color of clicked td to holdColor
     console.log(holdColor);
   });//gets direct descendent (td) of tr to get color. if use just .pallette, color would not register
   
   
-  var tdGrid;
-  $('#artboard td').on("click", function() {
+  var tdGrid;//to place chosen color on to grid
+  $('#artboard td').on("click", function() {//targets td in #artboard
     tdGrid = $(this).css("background-color", holdColor);//transfers color held in holdColor to td clicked in grid
     console.log(tdGrid);
   });
+
+
+  //erase button
+  var eraseButton = $('<button id="erase">erase</button>');//create button
+  $('#controls').append(eraseButton);//append button to #controls
+  var eraserActivate;
+  $(eraseButton).on("click", function() {//create listener to activate button
+    eraserOn = true;
+    eraserActivate = $(this).css("background-color", "white");
+    console.log(eraserActivate);
+
+    // var eraserUse;
+    // $('#artboard td').on("click", function() {
+    //   eraserUse = $(this).css("background-color", eraserActivate);
+    //   console.log(eraserUse);
+    // });
+
+  });
+
+
+
+
+
+  //clear button
+  var clear = $('<button id="clear">clear</button>').click(function() {//creates clear button
+
+  });
+  $('#controls').append(clear);//appends button to id 'controls'
+
 
 
 });
