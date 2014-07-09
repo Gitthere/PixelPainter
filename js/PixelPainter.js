@@ -10,13 +10,11 @@ $(document).ready(function() {
     for (var j = 0; j < 6; j++)  {//tableRow will contain 6 td data cells
       var tableData = $('<td></td>');
       $(tableRow).append(tableData);//data cells will be appended to tableRow
-      
       tableData.css({'background-color': colors[m]});
       m++;
     };
   $(table).append(tableRow);//then tableRows appended to table
   };
-    
   $('#controls').append(table);//table then appended to id 'controls' in html
 
 
@@ -54,22 +52,37 @@ $(document).ready(function() {
   
 
 
+  var holdColor;
+  $('#controls td').on("click", function() {
+    holdColor = $(this).css("background-color");//transfers color of clicked td to holdColor
+    console.log(holdColor);
+  });//gets direct descendent (td) of tr to get color. if use just .pallette, color would not register
+  
+  
+  var tdGrid;
+  $('#artboard td').on("click", function() {
+    tdGrid = $(this).css("background-color", holdColor);//transfers color held in holdColor to td clicked in grid
+    console.log(tdGrid);
+  });
+
+
 });
 
 
-//  below is code that does not include js for generating pallette and grids.
+ //below is code that does not include js for generating pallette and grids.
 
 // $(document).ready(function() {//Specify a function to execute when the DOM is fully loaded.
-//   var holdColor;
-//   var td = $('tr.pallette > td');//gets direct descendent (td) of tr to get color. if use just .pallette, color would not register
-//   td.click(function() {
-//     holdColor = $(this).css("background-color");//transfers color of clicked td to holdColor
-//   });
+  // var holdColor;
+  // var td = $('tr.pallette > td');//gets direct descendent (td) of tr to get color. if use just .pallette, color would not register
+  // td.click(function() {
+  //   console.log('click');
+  //   holdColor = $(this).css("background-color");//transfers color of clicked td to holdColor
+  // });
 
   
-//   var tdGrid = $('.grid td');//gets descendent of td
-//   tdGrid.click(function() {
-//     $(this).css("background-color", holdColor);//transfers color held in holdColor to td clicked in grid
-//   });
+  // var tdGrid = $('.grid td');//gets descendent of td
+  // tdGrid.click(function() {
+  //   $(this).css("background-color", holdColor);//transfers color held in holdColor to td clicked in grid
+  // });
 
 // });
