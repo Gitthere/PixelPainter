@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 
   //erase button
-  var erase = $('<button>erase</button>').click(function() {//creates erase button
+  var erase = $('<button id="erase">erase</button>').click(function() {//creates erase button
 
   });
   $('#controls').append(erase);//appends button to id 'controls'
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 
   //clear button
-  var clear = $('<button>clear</button>').click(function() {//creates clear button
+  var clear = $('<button id="clear">clear</button>').click(function() {//creates clear button
 
   });
   $('#controls').append(clear);//appends button to id 'controls'

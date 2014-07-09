@@ -3,9 +3,9 @@
   height: 400px;
 }
 
-/*#clear {
+#clear {
   float: left;
-}*/
+}
 
 
 table {
@@ -33,7 +33,7 @@ tr.pallette > td {}
 }
 
 #erase {
-  margin-left: 94px;
+  float: left;
   margin-top: 30px;
   width: 100px;
   height: 40px;
@@ -44,7 +44,8 @@ tr.pallette > td {}
 }
 
 #clear {
-  margin-left: 94px;
+  float: left;
+  margin-left: 41px;
   margin-top: 30px;
   width: 100px;
   height: 40px;
