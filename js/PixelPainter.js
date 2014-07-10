@@ -18,7 +18,7 @@ $(document).ready(function() {
   $('#controls').append(table);//table then appended to id 'controls' in html
 
 
-//code to generate grid
+  //code to generate grid
   var gridTable = $('<table id="gridTable"></table>');//create variable table container for grid
 
   for (var k = 0; k <= 8; k++) {//gridRow will be 8 rows
@@ -56,13 +56,12 @@ $(document).ready(function() {
   });
 
 
-
   //clear button
   var clearButton = $('<button id="clear">clear</button>');//creates clear button
   $('#controls').append(clearButton);//appends button to id 'controls'
 
-  $(clearButton).on('click', function() {
-    $('#artboard td').css('background-color', 'white');
+  $(clearButton).on('click', function() {//creates listener for clear button
+    $('#artboard td').css('background-color', '#FFFFFF');//clears all data cells in #artboard to white
   });
 
 });
