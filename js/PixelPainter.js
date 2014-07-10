@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 
 //code to generate grid
-  var gridTable = $('<table></table>');//create variable table container for grid
+  var gridTable = $('<table id="gridTable"></table>');//create variable table container for grid
 
   for (var k = 0; k <= 8; k++) {//gridRow will be 8 rows
     var gridRow = $('<tr/>'); //container to hold rows
@@ -58,10 +58,12 @@ $(document).ready(function() {
 
 
   //clear button
-  var clear = $('<button id="clear">clear</button>');//creates clear button
-  $('#controls').append(clear);//appends button to id 'controls'
+  var clearButton = $('<button id="clear">clear</button>');//creates clear button
+  $('#controls').append(clearButton);//appends button to id 'controls'
 
-
+  $(clearButton).on('click', function() {
+    $('#artboard td').css('background-color', 'white');
+  });
 
 });
 
